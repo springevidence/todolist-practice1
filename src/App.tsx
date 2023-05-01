@@ -1,22 +1,14 @@
 import React from 'react';
 import './App.css';
-import Tasks from "./Tasks";
+import Tasks from "./components/Tasks";
+import {dataType} from "./components/Tasks";
+import Cars from "./components/Cars";
+import {CarsType} from "./components/Cars";
 
 // Hi Guys!
 // Let's reinforce our current session!
 // -You have 2 arrays. You should create a new component TASKS, where you will render these arrays.
 // -Don't forget to assign types to our data.
-
-export type dataType = {
-    title: string
-    tasks: Array<tasksType>
-    students: Array<string>
-}
-type tasksType = {
-    taskId: number
-    title: string
-    isDone: boolean
-}
 
 function App() {
     const data1: dataType = {
@@ -73,7 +65,7 @@ function App() {
             'Ralphie Hebert',
         ]
     }
-    const data2: dataType =   {
+    const data2: dataType = {
         title: "What to learn",
         tasks: [
             {taskId: 1, title: "HTML&CSS", isDone: true},
@@ -133,40 +125,23 @@ function App() {
         ]
     }
 
+    const topCars: Array<CarsType> = [
+        {manufacturer: 'BMW', model: 'm5cs'},
+        {manufacturer: 'Mercedes', model: 'e63s'},
+        {manufacturer: 'Audi', model: 'rs6'}
+    ]
+
     return (
         <div className="App">
             <Tasks data={data1}/>
             <Tasks data={data2}/>
+            <Cars data={topCars}/>
+
         </div>
     );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //--------------------------------------------------------------
