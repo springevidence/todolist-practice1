@@ -6,6 +6,7 @@ import Cars from "./components/Cars";
 import {CarsType} from "./components/Cars";
 import Button from "./components/Button";
 import {subscribe} from "diagnostics_channel";
+import {useState} from "react";
 
 // Hi Guys!
 // Let's reinforce our current session!
@@ -143,6 +144,14 @@ function App() {
         console.log(message)
     }
 
+    let [a, setA] = useState(1);
+
+    const onClickHandler = () => {
+        setA(++a);
+    }
+    const resetToNull = () => {
+        setA(0);
+    }
     return (
         <div className="App">
             <Tasks data={data1}/>
@@ -151,6 +160,12 @@ function App() {
             <Button name={"MyYouTubeChanel-1"} callBack={() => Button1Foo("Vasya")}/>
             <Button name={"MyYouTubeChanel-2"} callBack={() => Button2Foo("Ivan")}/>
             <Button name={"Stupid button"} callBack={() => Button3Foo("I'm stupid button")}/>
+            <div>
+                <h1>{a}</h1>
+                <button onClick={onClickHandler}>number</button>
+                <button onClick={resetToNull}>0</button>
+            </div>
+
 
         </div>
     );
