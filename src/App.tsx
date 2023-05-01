@@ -3,10 +3,10 @@ import './App.css';
 import Tasks from "./components/Tasks";
 import {dataType} from "./components/Tasks";
 import Cars from "./components/Cars";
-import {CarsType} from "./components/Cars";
+import {topCars} from "./components/Cars";
 import Button from "./components/Button";
-import {subscribe} from "diagnostics_channel";
 import {useState} from "react";
+import Money from "./components/Money";
 
 // Hi Guys!
 // Let's reinforce our current session!
@@ -127,13 +127,6 @@ function App() {
             'Micheal Talbot95',
         ]
     }
-
-    const topCars: Array<CarsType> = [
-        {manufacturer: 'BMW', model: 'm5cs'},
-        {manufacturer: 'Mercedes', model: 'e63s'},
-        {manufacturer: 'Audi', model: 'rs6'}
-    ]
-
     const Button1Foo = (subscriber: string)  => {
         console.log(subscriber)
     }
@@ -165,8 +158,7 @@ function App() {
                 <button onClick={onClickHandler}>number</button>
                 <button onClick={resetToNull}>0</button>
             </div>
-
-
+            <Money />
         </div>
     );
 }
