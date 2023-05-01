@@ -4,6 +4,8 @@ import Tasks from "./components/Tasks";
 import {dataType} from "./components/Tasks";
 import Cars from "./components/Cars";
 import {CarsType} from "./components/Cars";
+import Button from "./components/Button";
+import {subscribe} from "diagnostics_channel";
 
 // Hi Guys!
 // Let's reinforce our current session!
@@ -131,11 +133,24 @@ function App() {
         {manufacturer: 'Audi', model: 'rs6'}
     ]
 
+    const Button1Foo = (subscriber: string)  => {
+        console.log(subscriber)
+    }
+    const Button2Foo = (subscriber: string)=> {
+        console.log(subscriber)
+    }
+    const Button3Foo = (message: string)=> {
+        console.log(message)
+    }
+
     return (
         <div className="App">
             <Tasks data={data1}/>
             <Tasks data={data2}/>
             <Cars data={topCars}/>
+            <Button name={"MyYouTubeChanel-1"} callBack={() => Button1Foo("Vasya")}/>
+            <Button name={"MyYouTubeChanel-2"} callBack={() => Button2Foo("Ivan")}/>
+            <Button name={"Stupid button"} callBack={() => Button3Foo("I'm stupid button")}/>
 
         </div>
     );

@@ -14,8 +14,8 @@ const Cars = (props: CarsPropsType) => {
             {props.data.map((elem, i) => {
                 return (
                     <tr>
-                        <th>{elem.manufacturer} </th>
-                        <th>{elem.model} </th>
+                        <th key={i+1}>{elem.manufacturer} </th>
+                        <th key={i}>{elem.model} </th>
                     </tr>
                 )
             })}
