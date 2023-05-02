@@ -5,12 +5,12 @@ type ButtonType = {
     callBack: () => void
 }
 const Button = (props: ButtonType) => {
-    const onClockHandler = () => {
+    const onClickHandler = () => {
         props.callBack()
     }
     return (
         <div>
-            <button onClick={onClockHandler}>{props.name}</button>
+            <button onClick={onClickHandler}>{props.name}</button>
         </div>
     );
 };

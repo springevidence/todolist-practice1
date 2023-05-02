@@ -127,16 +127,30 @@ function App() {
             'Micheal Talbot95',
         ]
     }
-    const Button1Foo = (subscriber: string)  => {
-        console.log(subscriber)
-    }
-    const Button2Foo = (subscriber: string)=> {
-        console.log(subscriber)
-    }
-    const Button3Foo = (message: string)=> {
-        console.log(message)
-    }
+    // const Button1Foo = (subscriber: string)  => {
+    //     console.log(subscriber)
+    // }
+    // const Button2Foo = (subscriber: string)=> {
+    //     console.log(subscriber)
+    // }
+    // const Button3Foo = (message: string)=> {
+    //     console.log(message)
+    // }
 
+
+    const ButtonFoo = (message: string, buttonName: string)=> {
+        switch (buttonName) {
+            case "MyYouTubeChanel-1":
+                return console.log(message);
+            case "MyYouTubeChanel-2":
+                return console.log(message)
+            case "Stupid button":
+                return console.log(message)
+            // default:
+            //     return
+        }
+
+    }
     let [a, setA] = useState(1);
 
     const onClickHandler = () => {
@@ -150,9 +164,12 @@ function App() {
             <Tasks data={data1}/>
             <Tasks data={data2}/>
             <Cars data={topCars}/>
-            <Button name={"MyYouTubeChanel-1"} callBack={() => Button1Foo("Vasya")}/>
-            <Button name={"MyYouTubeChanel-2"} callBack={() => Button2Foo("Ivan")}/>
-            <Button name={"Stupid button"} callBack={() => Button3Foo("I'm stupid button")}/>
+            {/*<Button name={"MyYouTubeChanel-1"} callBack={() => Button1Foo("Vasya")}/>*/}
+            {/*<Button name={"MyYouTubeChanel-2"} callBack={() => Button2Foo("Ivan")}/>*/}
+            {/*<Button name={"Stupid button"} callBack={() => Button3Foo("I'm stupid button")}/>*/}
+            <Button name={"MyYouTubeChanel-1"} callBack={() => ButtonFoo("Vasya","MyYouTubeChanel-1")}/>
+            <Button name={"MyYouTubeChanel-2"} callBack={() => ButtonFoo("Ivan", "MyYouTubeChanel-2")}/>
+            <Button name={"Stupid button"} callBack={() => ButtonFoo("I'm stupid button","Stupid button")}/>
             <div>
                 <h1>{a}</h1>
                 <button onClick={onClickHandler}>number</button>
